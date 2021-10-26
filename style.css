@@ -1,0 +1,264 @@
+:root {
+    --width: 45px;
+}
+
+body {
+    background-color: black;
+    color: #fff;
+    min-height: 100vh;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    /* adding perspective which is how you want to look at your shape */
+    perspective: 500px;
+    /* to add more specific for perspective to look from the top using 50% from the x-axis (Middle) and top will be y-axis  */
+    perspective-origin: 50% calc(50% - 150px);
+}
+
+.scene {
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.banner {
+    display: flex;
+    /* adding style for transform to keep the 3D dimension respect */
+    transform-style: preserve-3d;
+    /* adding animation to the rounded text for moving */
+    animation: circle 24s infinite linear;
+}
+
+@keyframes circle {
+    to {
+        transform: rotateY(-360deg);
+    }
+}
+
+.panel {
+    /* setting to make the group of boxes to turn around center point */
+    /* make translateZ as per your request until there is no intersect between boxes */
+    position: absolute;
+    transform: translate(-50%, -50%) rotateY(var(--angle)) translateZ(170px);
+    /* position: relative; */
+    height: 120px;
+    width: var(--width);
+    /* border: 1px solid white; */
+    /* adding background to make the distance precise as possible */
+    /* background-color: #fff4; */
+    overflow: hidden;
+    /* transition: transform 0.5s; */
+    /* animation: rotate 6s infinite ease-in-out alternate;
+    animation-delay: var(--delay); */
+}
+
+/* adding animation for each segement of the text to create excellent effect + delay */
+/* this will help use as there is equal pause to use alternate in the animation to add more beauty */
+@keyframes rotate {
+    /* so between 0 to 15 will pause and then start */
+    0%, 15% {
+        transform: rotateX(0deg);
+    }
+    /* so between 85 to 100 will pause then start again */
+    85%, 100% {
+        /* transform: rotateX(360deg); */
+        transform: rotateX(720deg);
+    }
+}
+
+/* can add hover effect for good letters effects */
+/* .panel:hover {
+    transform: scale(1.6);
+} */
+
+.panel::before {
+    /* test first for short text then add more */
+    content: "Hello World, My Name is Ahmed!";
+    position: absolute;
+    left: var(--left);
+    top: var(--top);
+    color: hsl(var(--hue), 75%, 75%);
+    font-size: 70px;
+    width: max-content;
+}
+
+.panel:nth-child(1) {
+    --left: calc(var(--width) * 0 * -1);
+    /* --top: 4px; */
+    --hue: calc(360 / 24 * 1);
+    --delay: calc(0.1s * 1);
+    --angle: calc(360deg / 24 * 1);
+}
+
+.panel:nth-child(2) {
+    --left: calc(var(--width) * 1 * -1);
+    /* --top: 8px; */
+    --hue: calc(360 / 24 * 2);
+    --delay: calc(0.1s * 2);
+    --angle: calc(360deg / 24 * 2);
+}
+
+.panel:nth-child(3) {
+    --left: calc(var(--width) * 2 * -1);
+    /* --top: 3px; */
+    --hue: calc(360 / 24 * 3);
+    --delay: calc(0.1s * 3);
+    --angle: calc(360deg / 24 * 3);
+}
+
+.panel:nth-child(4) {
+    --left: calc(var(--width) * 3 * -1);
+    /* --top: 6px; */
+    --hue: calc(360 / 24 * 4);
+    --delay: calc(0.1s * 4);
+    --angle: calc(360deg / 24 * 4);
+}
+
+.panel:nth-child(5) {
+    --left: calc(var(--width) * 4 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 5);
+    --delay: calc(0.1s * 5);
+    --angle: calc(360deg / 24 * 5);
+}
+.panel:nth-child(6) {
+    --left: calc(var(--width) * 5 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 6);
+    --delay: calc(0.1s * 6);
+    --angle: calc(360deg / 24 * 6);
+}
+.panel:nth-child(7) {
+    --left: calc(var(--width) * 6 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 7);
+    --delay: calc(0.1s * 7);
+    --angle: calc(360deg / 24 * 7);
+}
+.panel:nth-child(8) {
+    --left: calc(var(--width) * 7 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 8);
+    --delay: calc(0.1s * 8);
+    --angle: calc(360deg / 24 * 8);
+}
+.panel:nth-child(9) {
+    --left: calc(var(--width) * 8 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 9);
+    --delay: calc(0.1s * 9);
+    --angle: calc(360deg / 24 * 9);
+}
+.panel:nth-child(10) {
+    --left: calc(var(--width) * 9 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 10);
+    --delay: calc(0.1s * 10);
+    --angle: calc(360deg / 24 * 10);
+}
+.panel:nth-child(11) {
+    --left: calc(var(--width) * 10 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 11);
+    --delay: calc(0.1s * 11);
+    --angle: calc(360deg / 24 * 11);
+}
+.panel:nth-child(12) {
+    --left: calc(var(--width) * 11 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 12);
+    --delay: calc(0.1s * 12);
+    --angle: calc(360deg / 24 * 12);
+}
+.panel:nth-child(13) {
+    --left: calc(var(--width) * 12 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 13);
+    --delay: calc(0.1s * 13);
+    --angle: calc(360deg / 24 * 13);
+}
+.panel:nth-child(14) {
+    --left: calc(var(--width) * 13 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 14);
+    --delay: calc(0.1s * 14);
+    --angle: calc(360deg / 24 * 14);
+}
+.panel:nth-child(15) {
+    --left: calc(var(--width) * 14 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 15);
+    --delay: calc(0.1s * 15);
+    --angle: calc(360deg / 24 * 15);
+}
+.panel:nth-child(16) {
+    --left: calc(var(--width) * 15 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 16);
+    --delay: calc(0.1s * 16);
+    --angle: calc(360deg / 24 * 16);
+}
+.panel:nth-child(17) {
+    --left: calc(var(--width) * 16 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 17);
+    --delay: calc(0.1s * 17);
+    --angle: calc(360deg / 24 * 17);
+}
+.panel:nth-child(18) {
+    --left: calc(var(--width) * 17 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 18);
+    --delay: calc(0.1s * 18);
+    --angle: calc(360deg / 24 * 18);
+}
+.panel:nth-child(19) {
+    --left: calc(var(--width) * 18 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 19);
+    --delay: calc(0.1s * 19);
+    --angle: calc(360deg / 24 * 19);
+}
+.panel:nth-child(20) {
+    --left: calc(var(--width) * 19 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 20);
+    --delay: calc(0.1s * 20);
+    --angle: calc(360deg / 24 * 20);
+}
+.panel:nth-child(21) {
+    --left: calc(var(--width) * 20 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 21);
+    --delay: calc(0.1s * 21);
+    --angle: calc(360deg / 24 * 21);
+}
+.panel:nth-child(22) {
+    --left: calc(var(--width) * 21 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 22);
+    --delay: calc(0.1s * 22);
+    --angle: calc(360deg / 24 * 22);
+}
+.panel:nth-child(23) {
+    --left: calc(var(--width) * 22 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 23);
+    --delay: calc(0.1s * 23);
+    --angle: calc(360deg / 24 * 23);
+}
+.panel:nth-child(24) {
+    --left: calc(var(--width) * 23 * -1);
+    /* --top: 2px; */
+    --hue: calc(360 / 24 * 24);
+    --delay: calc(0.1s * 24);
+    --angle: calc(360deg / 24 * 24);
+}
+
+.screen {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-image: linear-gradient(90deg, #0003, #000 35%, #000 65%, #0003);
+    transform: translate(-50%, -50%);
+}
