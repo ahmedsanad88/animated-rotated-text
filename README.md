@@ -11,9 +11,13 @@ To make it simple I used CSS which will lead to so much repetitive code but this
 
 ## How it's looking on Real?
 
-[Golive](https://tiktok-clone-7fc49.web.app/)
 
-Video goes here!!!
+
+
+https://user-images.githubusercontent.com/57454543/138921342-241e2b01-91e5-4683-9d1d-eab79d16bf64.mp4
+
+
+
 
 ## Contributing:
 
